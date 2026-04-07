@@ -25,14 +25,14 @@ app.post('/usuarios',(request, response) => {
 
     console.log(name, email, telefone)
 
-    response.status(200).send(usuarios)
+    return response.status(200).send(usuarios)
 })
 
 // BUSCA TODOS OS USUARIOS
 
 app.get('/usuarios', (request, response) => {
 
-    response.status(200).send(usuarios)
+    return response.status(200).send(usuarios)
 })
 
 // BUSCA USUÁRIO PELO ID
@@ -47,7 +47,7 @@ app.get('/buscar/usuarios/:id', (request, response) =>{
         return response.status(404).send({mensage: "usuário não encontrado"})
     }
 
-    response.status(200).send(indexUsuarios)
+    return response.status(200).send(indexUsuarios)
 
 })
 
